@@ -1,6 +1,6 @@
 @import "compass";
 @import "font-awesome.css";
-@import "compass/reset";
+// @import "compass/reset";
 @import "modular-scale";
 @import "breakpoint";
 @import "susy";
@@ -13,6 +13,17 @@
 @import "PROTO";
 @import "PROTO-style";
 
+@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy);
+@import url(http://fonts.googleapis.com/css?family=Buda:300);
+
 body {
 	font-size: 3em;
+}
+
+.monster {
+	font-family: 'Luckiest Guy', sans-serif;
+}
+
+.smug {
+	font-family: 'Buda', serif;
 }
