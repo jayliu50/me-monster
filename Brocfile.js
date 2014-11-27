@@ -95,6 +95,10 @@ var appJs = mergeTrees([scripts, bower]) // todo: merge vendor stuff into appJs 
 
 var appHtml = compileJade(views)
 
+var media = pickFiles(app, {
+  srcDir: 'media',
+  destDir: 'media'
+})
 
-module.exports = mergeTrees([appJs, appHtml, appCss, fonts])
+module.exports = mergeTrees([appJs, appHtml, appCss, fonts, media])
 
