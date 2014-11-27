@@ -1,0 +1,31 @@
+{
+  "name": "me-monster",
+  "version": "0.0.0",
+  "authors": [
+    "Jay Liu <jayliu50@gmail.com>"
+  ],
+  "description": "Yet another kinetic typography project",
+  "keywords": [
+    "prototype",
+    "broccoli",
+    "font-awesome",
+    "lodash",
+    "jade",
+    "coffeescript"
+  ],
+  "license": "MIT",
+  "homepage": "http://endeavors.cyanosphere.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "jquery": "~2.1.1",
+    "greensock": "~1.14.2"
+  }
+}
