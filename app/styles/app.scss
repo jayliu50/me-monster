@@ -1,6 +1,6 @@
 @import "compass";
 @import "font-awesome.css";
-// @import "compass/reset";
+@import "compass/reset";
 @import "modular-scale";
 @import "breakpoint";
 @import "susy";
@@ -38,5 +38,5 @@ body {
 }
 
 div.scene {
-	display: fixed !important;
+	position: absolute;
 }

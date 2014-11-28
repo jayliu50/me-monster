@@ -2,8 +2,8 @@ $ ->
 
   audio = null
   tl = new TimelineMax()
-  # test = true
-  test = false
+  test = true
+  # test = false
 
   seekTo = (pos) ->
     tl.seek(pos)
@@ -41,11 +41,16 @@ $ ->
 
     audio.play() unless test
 
+    # fittext
+    $('#me-monster-1').fitText()
+
     # TweenLite.to( [target object], [duration in seconds], [destination values] )
     # .from(timelineLite, 0.5, {alpha:0}, "-=0.2")
     # tl.staggerFrom(chars, 0.8, {opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:Back.easeOut}, 0.01, "+=0");
     # .staggerFrom( targets:Array, duration:Number, vars:Object, stagger:Number, position:*, onCompleteAll:Function, onCompleteAllParams:Array, onCompleteScope:* ) : *
     tl.set('body', {perspective: 400})
+
+
     tl.from('#title', 1, {}, 0)
     tl.to('#title', 1, (
       'font-size': '0.5em'
@@ -55,8 +60,9 @@ $ ->
       ), "+5")
 
 
-    tl.staggerFrom(splitWords('#me-monster-1'), 0.5, {alpha:0}, 0.3, 10.178)
-    tl.staggerFrom(splitWords('#me-monster-2'), 0.5, {alpha:0}, 0.2, 14.383)
+
+    tl.staggerFrom(splitWords('#me-monster-1'), 0.5, {alpha:0, onCompleteAll: -> $('#me-monster-1').remove()}, 0.3, 10.178)
+    tl.staggerFrom(splitWords('#me-monster-2'), 0.5, {alpha:0, onCompleteAll: -> $('#me-monster-2').remove()}, 0.2, 14.383)
 
     tl.from('#me-1', 0.5, {alpha:0}, 17.199)
     # harsh shadow, bright glow
@@ -68,7 +74,10 @@ $ ->
     tl.staggerFrom(splitLetters('#me-7'), 0.5, {alpha:0}, 0.05, 24.958)
     tl.from('#beware', 0.5, {alpha:0}, 30.731)
 
-    tl.to('#scene-1', 1, {opacity:0, onComplete: -> $('#scene-1').remove() }, "+=2")
+    tl.to('#scene-1', 1, (
+      opacity:0
+      visibility: 'collapse'
+    ), "+=2")
 
 
     tl.staggerFrom(splitWords('#nothing'), 0.5, {alpha:0}, 0.3, 39.371)
@@ -79,7 +88,7 @@ $ ->
     tl.staggerFrom(splitWords('#waste-5'), 0.5, {alpha:0}, 0.3, 54.7)
 
 
-    tl.to('#scene-2', 1, {opacity:0, onComplete: -> $('#scene-2').remove() }, "+=2")
+    tl.to('#scene-2', 1, {opacity:0}, "+=2")
 
 
     tl.from('#waiting', 0.5, {alpha:0}, 71.933)
@@ -95,7 +104,7 @@ $ ->
     tl.from('#now', 0.5, {alpha:0}, 84.993)
 
 
-    tl.to('#scene-3', 1, {opacity:0, onComplete: -> $('#scene-3').remove() }, "+=2")
+    tl.to('#scene-3', 1, {opacity:0}, "+=2")
 
     # What is it about the human condition people get something out of that? That’s why I have a social fantasy.
     # [go fantasy]
@@ -106,6 +115,9 @@ $ ->
     # 1:43.778 They can sit back  quietly at a dinner party, while some other person, some Me monster doing his thing and let him go,
     # 1:53.841 let him run with the line while you be quiet   …… …    oh, really?
     tl.from('#zzzz', 0.5, {alpha:0}, 117.649)
+
+    $('#barrage-1').fitText()
+
     tl.staggerFrom(splitWords('#barrage-1'), 0.5, {alpha:0}, 0.2, 122.512)
     tl.staggerFrom(splitWords('#barrage-2'), 0.5, {alpha:0}, 0.2, 139.446)
     tl.staggerFrom(splitWords('#barrage-3'), 0.5, {alpha:0}, 0.2, 140.492)
@@ -113,11 +125,17 @@ $ ->
     tl.staggerFrom(splitWords('#barrage-5'), 0.5, {alpha:0}, 0.2, 141.675)
     tl.staggerFrom(splitWords('#barrage-6'), 0.5, {alpha:0}, 0.2, 142.650)
     tl.staggerFrom(splitWords('#barrage-7'), 0.5, {alpha:0}, 0.2, 143.466)
+
+    # zoom way out and show the response
+    tl.to('#scene-4', 0.5, {scale: 0.1}, "-=0.2")
+
     tl.staggerFrom(splitWords('#moon-1'), 0.5, {alpha:0}, 0.3, 150.258)
 
-    tl.to('#moon-token', 1, {rotation:45}, "+0.5")
+    tl.to('#moon-token', 1, {rotation:45}, "+=0.5")
 
-    tl.to('#scene-4', 1, {opacity:0, onComplete: -> $('#scene-4').remove() }, "+=2")
+    tl.to('#scene-4', 1, {opacity:0}, "+=2")
+
+    $('#moon-7').fitText()
 
     tl.staggerFrom(splitWords('#moon-2'), 0.5, {alpha:0}, 0.2, 159.755)
     tl.staggerFrom(splitWords('#moon-3'), 0.5, {alpha:0}, 0.3, 163.274)
@@ -126,10 +144,16 @@ $ ->
     tl.staggerFrom(splitWords('#moon-6'), 0.5, {alpha:0}, 0.2, 177.346)
     tl.staggerFrom(splitWords('#moon-7'), 0.5, {alpha:0}, 0.2, 179.66)
 
-    tl.to('#scene-5', 1, {opacity:0, onComplete: -> $('#scene-5').remove() }, "+=2")
+    tl.to('#scene-5', 1, {opacity:0}, "+=2")
 
     if test
-      tl.seek 173
+      goto = 98
+
+      # when goto >
+
+
+      tl.seek 120
+
 
   $('#stop-button').on 'click', ->
     audio.pause()
