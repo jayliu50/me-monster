@@ -80,18 +80,18 @@ bower = pickFiles(bower, {
   destDir: 'bower'
 })
 
-// var vendor = pickFiles(app, {
-//   srcDir: '/scripts/vendor',
-//   files: ['**/*.js'],
-//   destDir: 'scripts/vendor'
-// })
+var vendor = pickFiles(app, {
+  srcDir: '/scripts/vendor',
+  files: ['**/*.js'],
+  destDir: 'scripts/vendor'
+})
 
 // bower = uglify(bower, {
 //   mangle: false
 // })
 
 
-var appJs = mergeTrees([scripts, bower]) // todo: merge vendor stuff into appJs if applicable
+var appJs = mergeTrees([scripts, bower, vendor]) // todo: merge vendor stuff into appJs if applicable
 
 var appHtml = compileJade(views)
 
