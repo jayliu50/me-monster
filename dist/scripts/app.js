@@ -30,7 +30,10 @@ $(function() {
     }
     return $(selector).children();
   };
-  collapseDown = function(t, selector) {
+  collapseDown = function(t, selector, time) {
+    if (time == null) {
+      time = 1;
+    }
     return t.to(selector, 1, {
       alpha: 0,
       'font-size': '0.001pt'
@@ -64,22 +67,43 @@ $(function() {
     tl.from('#me', 0.5, {
       alpha: 0
     }, 17.199);
-    tl.set("#me", {
-      className: "=me-1"
-    }, 18.307);
-    tl.call(function() {
+    tl.call((function() {
       return $('#me').fitText(0.2);
-    });
-    tl.set("#me", {
-      className: "=me-2"
-    }, 18.307);
-    tl.staggerFrom(splitLetters('#me-6'), 0.5, {
-      alpha: 0
-    }, 0.05, 23.160);
-    tl.staggerFrom(splitLetters('#me-7'), 0.5, {
-      alpha: 0
-    }, 0.05, 24.958);
-    tl.from('#beware', 0.5, {
+    }), null, 18.307);
+    tl.set('#me', {
+      className: "+=me-1"
+    }, 20.163);
+    tl.to('#me', 1.04, {
+      x: 10,
+      y: 15,
+      ease: RoughEase.ease.config({
+        strength: 3,
+        points: 50,
+        template: Strong.easeInOut,
+        randomize: true
+      })
+    }, 21.206);
+    tl.to('#me', 1.8, {
+      x: 10,
+      y: 80,
+      ease: RoughEase.ease.config({
+        strength: 60,
+        points: 30,
+        template: Strong.easeInOut,
+        randomize: true
+      })
+    }, 23.160);
+    tl.to('#me', 1, {
+      x: 100,
+      y: 10,
+      ease: RoughEase.ease.config({
+        strength: 100,
+        points: 60,
+        template: Strong.easeInOut,
+        randomize: true
+      })
+    }, 24.958);
+    tl.to('#me', 0.5, {
       alpha: 0
     }, 30.731);
     tl.to('#scene-1', 1, {
@@ -116,66 +140,69 @@ $(function() {
     tl.from('#yeah-2', 0.5, {
       alpha: 0
     }, 77.327);
-    tl.from('#you-me-1', 0.5, {
+    tl.from('#you', 0.5, {
       alpha: 0
     }, 77.936);
-    tl.from('#you-me-2', 0.5, {
-      alpha: 0
+    tl.from('#me-2', 0.5, {
+      alpha: 0,
+      scale: "+=1"
     }, 78.205);
-    tl.from('#you-me-3', 0.5, {
-      alpha: 0
+    tl.to('#me-2', 0.5, {
+      zoom: 1.5
     }, 79.784);
-    tl.from('#you-me-4', 0.5, {
-      alpha: 0
+    tl.to('#you-me', 0.5, {
+      x: "+=500"
     }, 80.038);
-    tl.from('#you-me-5', 0.5, {
-      alpha: 0
+    tl.to('#me-2', 0.5, {
+      scale: "+=5"
     }, 80.924);
-    tl.from('#you-me-6', 0.5, {
-      alpha: 0
+    tl.to('#you-me', 0.5, {
+      x: "-=100"
+    }, 80.924);
+    tl.to('#you-me', 0.5, {
+      x: "+=100"
     }, 82.068);
-    tl.from('#you-me-7', 0.5, {
-      alpha: 0
+    tl.to('#you-me', 0.5, {
+      x: "-=100"
     }, 82.813);
-    tl.from('#now', 0.5, {
-      alpha: 0
-    }, 84.993);
     tl.to('#scene-3', 1, {
       alpha: 0
-    }, "+=2");
-    tl.from('#moon', 0.5, {
-      alpha: 0
-    }, 98.355);
-    tl.from('#zzzz', 0.5, {
-      alpha: 0
-    }, 117.649);
+    }, 84.993);
+    tl.staggerFrom(splitWords('#barrage-0'), 0.5, {
+      alpha: 0,
+      x: "-30"
+    }, 0.2, 113.841);
+    tl.to('#scene-4', 139.446 - 113.841, {
+      marginTop: -1 * $('#scene-4').height()
+    });
     tl.staggerFrom(splitWords('#barrage-1'), 0.5, {
-      alpha: 0
+      alpha: 0,
+      x: "-30"
     }, 0.2, 122.512);
-    tl.staggerFrom(splitWords('#barrage-2'), 0.5, {
+    tl.from('#monster', 0.5, {
       alpha: 0
-    }, 0.2, 139.446);
-    tl.staggerFrom(splitWords('#barrage-3'), 0.5, {
+    }, 139.446);
+    tl.from('#barrage-2', 0.5, {
       alpha: 0
-    }, 0.2, 140.492);
-    tl.staggerFrom(splitWords('#barrage-4'), 0.5, {
+    }, 140.492);
+    tl.from('#barrage-3', 0.5, {
       alpha: 0
-    }, 0.2, 140.977);
-    tl.staggerFrom(splitWords('#barrage-5'), 0.5, {
+    }, 140.977);
+    tl.from('#barrage-4', 0.5, {
       alpha: 0
-    }, 0.2, 141.675);
-    tl.staggerFrom(splitWords('#barrage-6'), 0.5, {
+    }, 141.675);
+    tl.from('#barrage-5', 0.5, {
       alpha: 0
-    }, 0.2, 142.650);
-    tl.staggerFrom(splitWords('#barrage-7'), 0.5, {
+    }, 142.650);
+    tl.from('#barrage-6', 0.5, {
       alpha: 0
-    }, 0.2, 143.466);
+    }, 143.466);
     tl.staggerFrom(splitWords('#moon-1'), 0.5, {
       alpha: 0
     }, 0.3, 150.258);
     tl.to('#scene-4', 0.5, {
       css: {
-        transform: 'translateZ(-3000px) translateX(1000px)'
+        transform: 'translateZ(-800px) translateX(1000px)'
       },
       color: '#ccc'
     }, "-=1.2");
@@ -198,6 +225,7 @@ $(function() {
     tl.staggerFrom(splitWords('#moon-5'), 0.5, {
       alpha: 0
     }, 0.3, 173.781);
+    collapseDown(tl, '#moon-part-1', 0);
     tl.staggerFrom(splitWords('#moon-6'), 0.5, {
       alpha: 0
     }, 0.2, 177.346);
@@ -208,7 +236,7 @@ $(function() {
       alpha: 0
     }, "+=2");
     if (test) {
-      return tl.seek(14);
+      return tl.seek(140);
     }
   });
   return $('#stop-button').on('click', function() {
