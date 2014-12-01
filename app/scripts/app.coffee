@@ -45,7 +45,7 @@ $ ->
 
 
   $('#play-button').on 'click', ->
-    audio = new Audio 'media/me-monster-edit.mp3'
+    audio = new Audio 'media/me-monster-edit.mp3' unless audio
 
     audio.play() unless test
 
@@ -66,8 +66,6 @@ $ ->
       color: 'gray'
       ), "+5")
 
-
-
     tl.staggerFrom(splitWords('#me-monster-1'), 0.5, {alpha:0}, 0.3, 10.178)
 
     collapseDown tl, '#me-monster-1'
@@ -75,19 +73,47 @@ $ ->
 
     collapseDown tl, '#me-monster-2'
 
-    tl.from('#me', 0.5, {alpha:0}, 17.199)
-    tl.set("#me", {className:"=me-1"}, 18.307);
-    tl.call () -> $('#me').fitText(0.2)
+
+    tl.from('#me', 0.5, {alpha: 0}, 17.199)
+    tl.call (() -> $('#me').fitText(0.2)), null, 18.307
+
+    tl.set('#me', {className:"+=me-1"}, 20.163)
+
+    #18.307
+
+    tl.to('#me', 1.04, {x:10, y:15, ease:RoughEase.ease.config(
+      strength:3
+      points:50
+      template:Strong.easeInOut
+      # taper:'both'
+      randomize:true) }, 21.206)
+
     # harsh shadow, bright glow
-    tl.set("#me", {className:"=me-2"}, 18.307);
+    # tl.set("html", {className:"me-2"}, 20.163);
 
     # tl.from('#me-3', 0.5, {alpha:0}, 18.307)
     # tl.from('#me-4', 0.5, {alpha:0}, 20.163)
     # tl.from('#me-5', 0.5, {alpha:0}, 21.206)
-    tl.staggerFrom(splitLetters('#me-6'), 0.5, {alpha:0}, 0.05, 23.160)
+
+
+    # tl.staggerFrom(splitLetters('#me-6'), 0.5, {alpha:0}, 0.05, 23.160)
+    tl.to('#me', 1.8, {x:10, y:80, ease:RoughEase.ease.config(
+      strength:60
+      points:30
+      template:Strong.easeInOut
+      # taper:'both'
+      randomize:true) }, 23.160)
     # last one comes in and blows up everything else :)
-    tl.staggerFrom(splitLetters('#me-7'), 0.5, {alpha:0}, 0.05, 24.958)
-    tl.from('#beware', 0.5, {alpha:0}, 30.731)
+    # tl.staggerFrom(splitLetters('#me-7'), 0.5, {alpha:0}, 0.05, 24.958)
+    tl.to('#me', 1, {x:100, y:10, ease:RoughEase.ease.config(
+      strength:100
+      points:60
+      template:Strong.easeInOut
+      # taper:'both'
+      randomize:true) }, 24.958)
+
+
+    tl.to('#me', 0.5, {alpha:0}, 30.731)
 
     tl.to('#scene-1', 1, (
       alpha:0
@@ -167,7 +193,7 @@ $ ->
     tl.to('#scene-5', 1, {alpha:0}, "+=2")
 
     if test
-      tl.seek 14
+      tl.seek 18
 
 
   $('#stop-button').on 'click', ->
