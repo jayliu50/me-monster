@@ -139,7 +139,7 @@ $ ->
     tl.from('#you', 0.5, {alpha:0}, 77.936)
     tl.from('#me-2', 0.5, {alpha: 0, scale: "+=1"}, 78.205)
     tl.to '#me-2', 0.5, {zoom: 1.5}, 79.784
-    tl.to '#you-me', 0.5, {x: "+=200"}, 80.038
+    tl.to '#you-me', 0.5, {x: "+=500"}, 80.038
     tl.to '#me-2', 0.5, {scale: "+=5"}, 80.924
     tl.to '#you-me', 0.5, {x: "-=100"}, 80.924
     tl.to '#you-me', 0.5, {x: "+=100"}, 82.068
@@ -175,19 +175,19 @@ $ ->
     # tl.call (() -> $('#monster').fitText(0.2)), null, 139.446
 
     tl.from '#monster', 0.5, {alpha:0}, 139.446
-
-    tl.to '#barrage-2', 0.5, {zoom: "+=0.3"} 140.492
-    tl.call (() -> $('#monster').text('RAHRAHRAH').fitText(1)), null, 140.977
-    tl.call (() -> $('#monster').text('RAHRAHARAHAH').fitText(1)), null, 141.675
-    tl.call (() -> $('#monster').text('RAHHDAAH').fitText(1)), null, 142.650
-    tl.call (() -> $('#monster').text('RAAAAAAAAAA').fitText(1)), null, 143.466
+    tl.from '#barrage-2', 0.5, {alpha:0}, 140.492
+    # tl.from '#barrage-2', 0.5, {zoom: "+=0.3"}, 140.492
+    tl.from '#barrage-3', 0.5, {alpha:0}, 140.977
+    tl.from '#barrage-4', 0.5, {alpha:0}, 141.675
+    tl.from '#barrage-5', 0.5, {alpha:0}, 142.650
+    tl.from '#barrage-6', 0.5, {alpha:0}, 143.466
 
 
     tl.staggerFrom(splitWords('#moon-1'), 0.5, {alpha:0}, 0.3, 150.258)
     # zoom way out and show the response
     tl.to('#scene-4', 0.5, (
       css: (
-          transform:'translateZ(-3000px) translateX(1000px)'
+          transform:'translateZ(-800px) translateX(1000px)'
         )
       color: '#ccc'
       ), "-=1.2")
@@ -203,12 +203,7 @@ $ ->
     tl.staggerFrom(splitWords('#moon-4'), 0.5, {alpha:0}, 0.3, 167.094)
     tl.staggerFrom(splitWords('#moon-5'), 0.5, {alpha:0}, 0.3, 173.781)
 
-    collapseDown tl, '#moon-1', 0
-    collapseDown tl, '#moon-2', 0
-    collapseDown tl, '#moon-3', 0
-    collapseDown tl, '#moon-4', 0
-    collapseDown tl, '#moon-5', 0
-
+    collapseDown tl, '#moon-part-1', 0
 
     tl.staggerFrom(splitWords('#moon-6'), 0.5, {alpha:0}, 0.2, 177.346)
     tl.staggerFrom(splitWords('#moon-7'), 0.5, {alpha:0}, 0.2, 179.66)
@@ -216,7 +211,7 @@ $ ->
     tl.to('#scene-5', 1, {alpha:0}, "+=2")
 
     if test
-      tl.seek 113
+      tl.seek 140
 
 
   $('#stop-button').on 'click', ->
