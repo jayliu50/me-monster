@@ -1,0 +1,135 @@
+@import url(font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy);
+@import url(http://fonts.googleapis.com/css?family=Buda:300);
+/* line 5, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../../styles/_me.scss */
+.megashadow, .me-1 {
+  color: #da586e;
+  text-shadow: #c83e57 1px 1px 0, #c83e57 2px 2px 0, #c83e57 3px 3px 0, #c83e57 4px 4px 0, #c83e57 5px 5px 0, #c83e57 6px 6px 0, #c83e57 7px 7px 0, #c83e57 8px 8px 0, #c83e57 9px 9px 0, #c83e57 10px 10px 0, #c83e57 11px 11px 0, #c83e57 12px 12px 0, #c83e57 13px 13px 0, #c83e57 14px 14px 0, #c83e57 15px 15px 0, #c83e57 16px 16px 0, #c83e57 17px 17px 0, #c83e57 18px 18px 0, #c83e57 19px 19px 0, #c83e57 20px 20px 0, #c83e57 21px 21px 0, #c83e57 22px 22px 0, #c83e57 23px 23px 0, #c83e57 24px 24px 0, #c83e57 25px 25px 0, #c83e57 26px 26px 0, #c83e57 27px 27px 0, #c83e57 28px 28px 0, #c83e57 29px 29px 0, #c83e57 30px 30px 0, #c83e57 31px 31px 0, #c83e57 32px 32px 0, #c83e57 33px 33px 0, #c83e57 34px 34px 0, #c83e57 35px 35px 0, #c83e57 36px 36px 0, #c83e57 37px 37px 0, #c83e57 38px 38px 0, #c83e57 39px 39px 0, #c83e57 40px 40px 0, #c83e57 41px 41px 0, #c83e57 42px 42px 0, #c83e57 43px 43px 0, #c83e57 44px 44px 0, #c83e57 45px 45px 0, #c83e57 46px 46px 0, #c83e57 47px 47px 0, #c83e57 48px 48px 0, #c83e57 49px 49px 0, #c83e57 50px 50px 0, #c83e57 51px 51px 0, #c83e57 52px 52px 0, #c83e57 53px 53px 0, #c83e57 54px 54px 0, #c83e57 55px 55px 0, #c83e57 56px 56px 0, #c83e57 57px 57px 0, #c83e57 58px 58px 0, #c83e57 59px 59px 0, #c83e57 60px 60px 0, #c83e57 61px 61px 0, #c83e57 62px 62px 0, #c83e57 63px 63px 0, #c83e57 64px 64px 0, #c83e57 65px 65px 0, #c83e57 66px 66px 0, #c83e57 67px 67px 0, #c83e57 68px 68px 0, #c83e57 50px 50px 0, #c83e57 69px 69px 0, #c83e57 70px 70px 0, #c83e57 71px 71px 0, #c83e57 72px 72px 0, #c83e57 73px 73px 0, #c83e57 74px 74px 0, #c83e57 75px 75px 0, #c83e57 76px 76px 0, #c83e57 77px 77px 0, #c83e57 78px 78px 0, #c83e57 79px 79px 0, #c83e57 80px 80px 0, #c83e57 81px 81px 0, #c83e57 82px 82px 0, #c83e57 83px 83px 0, #c83e57 84px 84px 0, #c83e57 85px 85px 0, #c83e57 86px 86px 0, #c83e57 87px 87px 0, #c83e57 88px 88px 0, #c83e57 89px 89px 0, #c83e57 90px 90px 0, #c83e57 91px 91px 0, #c83e57 92px 92px 0, #c83e57 93px 93px 0, #c83e57 94px 94px 0, #c83e57 95px 95px 0, #c83e57 96px 96px 0, #c83e57 97px 97px 0, #c83e57 98px 98px 0, #c83e57 99px 99px 0, #c83e57 100px 100px 0;
+}
+
+/* line 106, ../../styles/_me.scss */
+.megashadow:after, .me-1:after {
+  content: "ME";
+  color: #67b8e3;
+  left: 100px;
+  top: 100px;
+  text-shadow: none;
+  position: absolute;
+}
+
+/* line 21, ../../styles/app.scss */
+body {
+  font-size: 3em;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 27, ../../styles/app.scss */
+.monster, .me-1 {
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+/* line 31, ../../styles/app.scss */
+.smug {
+  font-family: 'Buda', serif;
+}
+
+/* line 36, ../../styles/app.scss */
+#stage {
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  padding: 8%;
+}
+
+/* line 43, ../../styles/app.scss */
+.scene {
+  position: absolute;
+  width: 100%;
+}
+
+/* line 48, ../../styles/app.scss */
+.screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+}
+
+/* line 58, ../../styles/app.scss */
+#barrage-1 {
+  font-size: 2.5em;
+}
+
+/* line 71, ../../styles/app.scss */
+.regan {
+  margin-left: 20%;
+}
