@@ -2,8 +2,8 @@ $ ->
 
   audio = null
   tl = new TimelineMax()
-  test = true
-  # test = false
+  # test = true
+  test = false
 
   seekTo = (pos) ->
     tl.seek(pos)
@@ -36,6 +36,14 @@ $ ->
 
     $(selector).children()
 
+  collapseDown = (t, selector) ->
+    t.to(selector, 1, (
+      alpha:0
+      # visibility: 'collapse'
+      'font-size': '0.001pt'
+    ))
+
+
   $('#play-button').on 'click', ->
     audio = new Audio 'media/me-monster-edit.mp3'
 
@@ -54,21 +62,28 @@ $ ->
     tl.from('#title', 1, {}, 0)
     tl.to('#title', 1, (
       'font-size': '0.5em'
-      bottom: '20px'
-      left: '20px'
       position: 'fixed'
+      color: 'gray'
       ), "+5")
 
 
 
     tl.staggerFrom(splitWords('#me-monster-1'), 0.5, {alpha:0}, 0.3, 10.178)
+
+    collapseDown tl, '#me-monster-1'
     tl.staggerFrom(splitWords('#me-monster-2'), 0.5, {alpha:0}, 0.2, 14.383)
 
-    tl.from('#me-1', 0.5, {alpha:0}, 17.199)
+    collapseDown tl, '#me-monster-2'
+
+    tl.from('#me', 0.5, {alpha:0}, 17.199)
+    tl.set("#me", {className:"=me-1"}, 18.307);
+    tl.call () -> $('#me').fitText(0.2)
     # harsh shadow, bright glow
-    tl.from('#me-3', 0.5, {alpha:0}, 18.307)
-    tl.from('#me-4', 0.5, {alpha:0}, 20.163)
-    tl.from('#me-5', 0.5, {alpha:0}, 21.206)
+    tl.set("#me", {className:"=me-2"}, 18.307);
+
+    # tl.from('#me-3', 0.5, {alpha:0}, 18.307)
+    # tl.from('#me-4', 0.5, {alpha:0}, 20.163)
+    # tl.from('#me-5', 0.5, {alpha:0}, 21.206)
     tl.staggerFrom(splitLetters('#me-6'), 0.5, {alpha:0}, 0.05, 23.160)
     # last one comes in and blows up everything else :)
     tl.staggerFrom(splitLetters('#me-7'), 0.5, {alpha:0}, 0.05, 24.958)
@@ -152,7 +167,7 @@ $ ->
     tl.to('#scene-5', 1, {alpha:0}, "+=2")
 
     if test
-      tl.seek 10
+      tl.seek 14
 
 
   $('#stop-button').on 'click', ->
