@@ -104,13 +104,13 @@ body {
   height: 100%;
   max-height: 100%;
   width: 100%;
-  padding: 8%;
+  padding: 10%;
 }
 
 /* line 43, ../../styles/app.scss */
 .scene {
   position: absolute;
-  width: 100%;
+  width: 80%;
 }
 
 /* line 48, ../../styles/app.scss */
@@ -124,12 +124,17 @@ body {
   right: 20%;
 }
 
-/* line 58, ../../styles/app.scss */
-#barrage-1 {
-  font-size: 2.5em;
+/* line 69, ../../styles/app.scss */
+#you-me div {
+  display: inline-block;
 }
 
-/* line 71, ../../styles/app.scss */
+/* line 74, ../../styles/app.scss */
 .regan {
   margin-left: 20%;
+}
+
+/* line 78, ../../styles/app.scss */
+#barrage-0 {
+  color: #D3D3D3;
 }
