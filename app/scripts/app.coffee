@@ -36,7 +36,7 @@ $ ->
 
     $(selector).children()
 
-  collapseDown = (t, selector) ->
+  collapseDown = (t, selector, time=1) ->
     t.to(selector, 1, (
       alpha:0
       # visibility: 'collapse'
@@ -135,37 +135,52 @@ $ ->
     tl.from('#waiting', 0.5, {alpha:0}, 71.933)
     tl.from('#yeah-1', 0.5, {alpha:0}, 75.530)
     tl.from('#yeah-2', 0.5, {alpha:0}, 77.327)
-    tl.from('#you-me-1', 0.5, {alpha:0}, 77.936)
-    tl.from('#you-me-2', 0.5, {alpha:0}, 78.205)
-    tl.from('#you-me-3', 0.5, {alpha:0}, 79.784)
-    tl.from('#you-me-4', 0.5, {alpha:0}, 80.038)
-    tl.from('#you-me-5', 0.5, {alpha:0}, 80.924)
-    tl.from('#you-me-6', 0.5, {alpha:0}, 82.068)
-    tl.from('#you-me-7', 0.5, {alpha:0}, 82.813)
-    tl.from('#now', 0.5, {alpha:0}, 84.993)
+
+    tl.from('#you', 0.5, {alpha:0}, 77.936)
+    tl.from('#me-2', 0.5, {alpha: 0, scale: "+=1"}, 78.205)
+    tl.to '#me-2', 0.5, {zoom: 1.5}, 79.784
+    tl.to '#you-me', 0.5, {x: "+=200"}, 80.038
+    tl.to '#me-2', 0.5, {scale: "+=5"}, 80.924
+    tl.to '#you-me', 0.5, {x: "-=100"}, 80.924
+    tl.to '#you-me', 0.5, {x: "+=100"}, 82.068
+    tl.to '#you-me', 0.5, {x: "-=100"}, 82.813
+    # tl.to '#me-2', 0.5, {scale: "+=5"}, 84.993
+    # tl.from('#you-me-2', 0.5, {alpha:0}, 78.205)
+    # tl.from('#you-me-3', 0.5, {alpha:0}, 79.784)
+    # tl.from('#you-me-4', 0.5, {alpha:0}, 80.038)
+    # tl.from('#you-me-5', 0.5, {alpha:0}, 80.924)
+    # tl.from('#you-me-6', 0.5, {alpha:0}, 82.068)
+    # tl.from('#you-me-7', 0.5, {alpha:0}, 82.813)
+    # tl.from('#now', 0.5, {alpha:0}, 84.993)
 
 
-    tl.to('#scene-3', 1, {alpha:0}, "+=2")
+    tl.to('#scene-3', 1, {alpha:0}, 84.993)
 
     # What is it about the human condition people get something out of that? That’s why I have a social fantasy.
     # [go fantasy]
     # I wish I were one of the 12 astronaughts.
 
      # They must love knowing they can beat anyone’s story, whenever they want.
-    tl.from('#moon', 0.5, {alpha:0}, 98.355)
+    # tl.from('#moon', 0.5, {alpha:0}, 98.355)
     # 1:43.778 They can sit back  quietly at a dinner party, while some other person, some Me monster doing his thing and let him go,
     # 1:53.841 let him run with the line while you be quiet   …… …    oh, really?
-    tl.from('#zzzz', 0.5, {alpha:0}, 117.649)
+    # tl.from('#zzzz', 0.5, {alpha:0}, 117.649)
 
+    tl.staggerFrom(splitWords('#barrage-0'), 0.5, {alpha:0, x: "-30"}, 0.2, 113.841)
+    tl.to '#scene-4', 139.446 - 113.841, {marginTop: (-1 * $('#scene-4').height())}
     # $('#barrage-1').fitText()
 
-    tl.staggerFrom(splitWords('#barrage-1'), 0.5, {alpha:0}, 0.2, 122.512)
-    tl.staggerFrom(splitWords('#barrage-2'), 0.5, {alpha:0}, 0.2, 139.446)
-    tl.staggerFrom(splitWords('#barrage-3'), 0.5, {alpha:0}, 0.2, 140.492)
-    tl.staggerFrom(splitWords('#barrage-4'), 0.5, {alpha:0}, 0.2, 140.977)
-    tl.staggerFrom(splitWords('#barrage-5'), 0.5, {alpha:0}, 0.2, 141.675)
-    tl.staggerFrom(splitWords('#barrage-6'), 0.5, {alpha:0}, 0.2, 142.650)
-    tl.staggerFrom(splitWords('#barrage-7'), 0.5, {alpha:0}, 0.2, 143.466)
+    tl.staggerFrom(splitWords('#barrage-1'), 0.5, {alpha:0, x: "-30"}, 0.2, 122.512)
+
+    # tl.call (() -> $('#monster').fitText(0.2)), null, 139.446
+
+    tl.from '#monster', 0.5, {alpha:0}, 139.446
+
+    tl.to '#barrage-2', 0.5, {zoom: "+=0.3"} 140.492
+    tl.call (() -> $('#monster').text('RAHRAHRAH').fitText(1)), null, 140.977
+    tl.call (() -> $('#monster').text('RAHRAHARAHAH').fitText(1)), null, 141.675
+    tl.call (() -> $('#monster').text('RAHHDAAH').fitText(1)), null, 142.650
+    tl.call (() -> $('#monster').text('RAAAAAAAAAA').fitText(1)), null, 143.466
 
 
     tl.staggerFrom(splitWords('#moon-1'), 0.5, {alpha:0}, 0.3, 150.258)
@@ -187,13 +202,21 @@ $ ->
     tl.staggerFrom(splitWords('#moon-3'), 0.5, {alpha:0}, 0.3, 163.274)
     tl.staggerFrom(splitWords('#moon-4'), 0.5, {alpha:0}, 0.3, 167.094)
     tl.staggerFrom(splitWords('#moon-5'), 0.5, {alpha:0}, 0.3, 173.781)
+
+    collapseDown tl, '#moon-1', 0
+    collapseDown tl, '#moon-2', 0
+    collapseDown tl, '#moon-3', 0
+    collapseDown tl, '#moon-4', 0
+    collapseDown tl, '#moon-5', 0
+
+
     tl.staggerFrom(splitWords('#moon-6'), 0.5, {alpha:0}, 0.2, 177.346)
     tl.staggerFrom(splitWords('#moon-7'), 0.5, {alpha:0}, 0.2, 179.66)
 
     tl.to('#scene-5', 1, {alpha:0}, "+=2")
 
     if test
-      tl.seek 18
+      tl.seek 113
 
 
   $('#stop-button').on 'click', ->
