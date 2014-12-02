@@ -1,5 +1,5 @@
 $(function() {
-  var audio, collapseDown, seekTo, splitLetters, splitWords, test, tl;
+  var audio, collapseDown, run, seekTo, splitLetters, splitWords, test, tl;
   audio = null;
   tl = new TimelineMax();
   test = false;
@@ -39,7 +39,7 @@ $(function() {
       'font-size': '0.001pt'
     });
   };
-  $('#play-button').on('click', function() {
+  run = function() {
     if (!audio) {
       audio = new Audio('media/me-monster-edit.mp3');
     }
@@ -235,10 +235,16 @@ $(function() {
     tl.to('#scene-5', 1, {
       alpha: 0
     }, "+=2");
+    tl.to('#title', 1, {
+      'font-size': '1em',
+      position: 'initial',
+      color: 'black'
+    }, "+=2");
     if (test) {
-      return tl.seek(140);
+      return tl.seek(179);
     }
-  });
+  };
+  run();
   return $('#stop-button').on('click', function() {
     audio.pause();
     return tl.stop();
