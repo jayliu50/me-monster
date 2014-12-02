@@ -90,16 +90,21 @@ body {
 }
 
 /* line 27, ../../styles/app.scss */
+#title {
+  font-size: 1em;
+}
+
+/* line 31, ../../styles/app.scss */
 .monster, .me-1 {
   font-family: 'Luckiest Guy', sans-serif;
 }
 
-/* line 31, ../../styles/app.scss */
+/* line 35, ../../styles/app.scss */
 .smug {
   font-family: 'Buda', serif;
 }
 
-/* line 36, ../../styles/app.scss */
+/* line 40, ../../styles/app.scss */
 #stage {
   height: 100%;
   max-height: 100%;
@@ -107,13 +112,13 @@ body {
   padding: 10%;
 }
 
-/* line 43, ../../styles/app.scss */
+/* line 47, ../../styles/app.scss */
 .scene {
   position: absolute;
   width: 80%;
 }
 
-/* line 48, ../../styles/app.scss */
+/* line 52, ../../styles/app.scss */
 .screen {
   position: fixed;
   width: 100%;
@@ -124,17 +129,17 @@ body {
   right: 20%;
 }
 
-/* line 69, ../../styles/app.scss */
+/* line 73, ../../styles/app.scss */
 #you-me div {
   display: inline-block;
 }
 
-/* line 74, ../../styles/app.scss */
+/* line 78, ../../styles/app.scss */
 .regan {
   margin-left: 20%;
 }
 
-/* line 78, ../../styles/app.scss */
+/* line 82, ../../styles/app.scss */
 #barrage-0 {
   color: #D3D3D3;
 }
