@@ -44,7 +44,8 @@ $ ->
     ))
 
 
-  $('#play-button').on 'click', ->
+  # $('#play-button').on 'click', ->
+  run = ->
     audio = new Audio 'media/me-monster-edit.mp3' unless audio
 
     audio.play() unless test
@@ -210,9 +211,16 @@ $ ->
 
     tl.to('#scene-5', 1, {alpha:0}, "+=2")
 
-    if test
-      tl.seek 140
+    tl.to('#title', 1, (
+      'font-size': '1em'
+      position: 'initial'
+      color: 'black'
+      ), "+=2")
 
+    if test
+      tl.seek 179
+
+  run()
 
   $('#stop-button').on 'click', ->
     audio.pause()
